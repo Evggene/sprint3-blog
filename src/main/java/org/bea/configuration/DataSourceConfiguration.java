@@ -21,7 +21,6 @@ import javax.sql.DataSource;
 @PropertySource("classpath:application.properties")
 public class DataSourceConfiguration {
 
-    // Настройка DataSource — компонент, отвечающий за соединение с базой данных
     @Bean
     public DataSource dataSource(
             @Value("${spring.datasource.url}") String url,
@@ -37,7 +36,6 @@ public class DataSourceConfiguration {
         return dataSource;
     }
 
-    // JdbcTemplate — компонент для выполнения запросов
     @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
